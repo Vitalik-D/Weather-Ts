@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.App .ant-table table {
+  text-align: center;
+}
+
+.App .ant-table-thead tr th {
+  text-align: center;
+}
+
+.nav{
+  display: flex;
+}
