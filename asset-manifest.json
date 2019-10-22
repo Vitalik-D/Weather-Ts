@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/Weather-Ts/static/css/main.72197f3b.chunk.css",
-    "main.js": "/Weather-Ts/static/js/main.b491ef40.chunk.js",
-    "main.js.map": "/Weather-Ts/static/js/main.b491ef40.chunk.js.map",
+    "main.css": "/Weather-Ts/static/css/main.6762767f.chunk.css",
+    "main.js": "/Weather-Ts/static/js/main.b36f00ff.chunk.js",
+    "main.js.map": "/Weather-Ts/static/js/main.b36f00ff.chunk.js.map",
     "runtime-main.js": "/Weather-Ts/static/js/runtime-main.d33b5198.js",
     "runtime-main.js.map": "/Weather-Ts/static/js/runtime-main.d33b5198.js.map",
     "static/css/2.0b726e0e.chunk.css": "/Weather-Ts/static/css/2.0b726e0e.chunk.css",
-    "static/js/2.af4fdce9.chunk.js": "/Weather-Ts/static/js/2.af4fdce9.chunk.js",
-    "static/js/2.af4fdce9.chunk.js.map": "/Weather-Ts/static/js/2.af4fdce9.chunk.js.map",
+    "static/js/2.48d525e2.chunk.js": "/Weather-Ts/static/js/2.48d525e2.chunk.js",
+    "static/js/2.48d525e2.chunk.js.map": "/Weather-Ts/static/js/2.48d525e2.chunk.js.map",
     "index.html": "/Weather-Ts/index.html",
-    "precache-manifest.d0ae325b6b336bf893bd62487f75df51.js": "/Weather-Ts/precache-manifest.d0ae325b6b336bf893bd62487f75df51.js",
+    "precache-manifest.0c533ac34e63b370f1f0d4dee838bacc.js": "/Weather-Ts/precache-manifest.0c533ac34e63b370f1f0d4dee838bacc.js",
     "service-worker.js": "/Weather-Ts/service-worker.js",
     "static/css/2.0b726e0e.chunk.css.map": "/Weather-Ts/static/css/2.0b726e0e.chunk.css.map",
-    "static/css/main.72197f3b.chunk.css.map": "/Weather-Ts/static/css/main.72197f3b.chunk.css.map"
+    "static/css/main.6762767f.chunk.css.map": "/Weather-Ts/static/css/main.6762767f.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.d33b5198.js",
     "static/css/2.0b726e0e.chunk.css",
-    "static/js/2.af4fdce9.chunk.js",
-    "static/css/main.72197f3b.chunk.css",
-    "static/js/main.b491ef40.chunk.js"
+    "static/js/2.48d525e2.chunk.js",
+    "static/css/main.6762767f.chunk.css",
+    "static/js/main.b36f00ff.chunk.js"
   ]
 }
