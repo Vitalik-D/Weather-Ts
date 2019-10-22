@@ -14,7 +14,7 @@ code {
 .ant-tabs-tab-prev.ant-tabs-tab-arrow-show, .ant-tabs-tab-next.ant-tabs-tab-arrow-show {
   display: none;
 }
-.ant-tabs-nav-container-scrolling {
+.App .ant-tabs-nav-container-scrolling {
    padding-right: 0;
    padding-left: 0;
 }
