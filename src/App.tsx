@@ -5,7 +5,7 @@ import "antd/dist/antd.css";
 import Forecast from "./components/page/Forecast";
 
 class App extends React.Component<any, any> {
-  constructor(props: any) {
+  constructor(props: object) {
     super(props);
     this.state = {
       search: "Lviv",
@@ -35,7 +35,8 @@ class App extends React.Component<any, any> {
   public getLocation = async () => {
     if (navigator.geolocation) {
       await navigator.geolocation.getCurrentPosition(async (position: any) => {
-        let state = await position.coords;
+          console.log(typeof position);
+          let state = await position.coords;
         this.setState({
           position: state
         });
@@ -65,11 +66,11 @@ class App extends React.Component<any, any> {
               />
               <Button type="primary" icon="compass" onClick={this.showModal} />
           </div>
-        <Tabs defaultActiveKey="1">
-          <TabPane tab="One day" key="1">
+        <Tabs defaultActiveKey="1" className="tabs">
+          <TabPane tab="One day" key="1" >
             <Weather search={this.state} />
           </TabPane>
-          <TabPane tab="Five day" key="2">
+          <TabPane tab="Five day" key="2" >
             <Forecast search={this.state} />
           </TabPane>
         </Tabs>

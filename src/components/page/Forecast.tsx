@@ -2,9 +2,10 @@ import * as React from "react";
 import { Spin, Table } from "antd";
 import "antd/dist/antd.css";
 import * as func from "../global/globalFunc";
+import './forecast.css'
 
 class Forecast extends React.Component<any, any> {
-  constructor(props: any) {
+  constructor(props: object) {
     super(props);
     this.state = {
       position: undefined,
@@ -24,9 +25,9 @@ class Forecast extends React.Component<any, any> {
   }
 
   public async componentDidUpdate(
-    prevProps: Readonly<any>,
-    prevState: Readonly<any>,
-    snapshot?: any
+    prevProps: Readonly<object>,
+    prevState: Readonly<object>,
+    snapshot?: object
   ) {
     if (this.state.search !== this.props.search.search) {
       const data = await func.loadDataForecast(this.props.search);
@@ -51,11 +52,11 @@ class Forecast extends React.Component<any, any> {
       {
         title: "Date",
         dataIndex: "dt_txt",
-        render: (param: any) => {
+        render: (param: string) => {
           const newDate = new Date(param);
           const month = newDate.getMonth();
           const date = newDate.getDate();
-          let hours: any = newDate.getHours();
+          let hours: number|string = newDate.getHours();
           if (hours.toString().length < 2) {
             hours = 0 + hours.toString();
           }
@@ -139,6 +140,7 @@ class Forecast extends React.Component<any, any> {
       },
       {
         title: "Snow",
+
         dataIndex: "snow.3h",
         render: (param: number | string) => {
           if (param === undefined) {
@@ -156,16 +158,17 @@ class Forecast extends React.Component<any, any> {
       <div className="App">
         <div className="one-day">
           {isLoading ? (
-            <>
+            <div  className='table-forecast'>
               <h1>
                 Weather today in {data.city.name}, country: {data.city.country}
               </h1>
               <Table
+
                 columns={columns}
                 dataSource={data.list}
                 rowKey={rowKey => rowKey.dt}
               />
-            </>
+            </div>
           ) : (
             <div>
               {" "}

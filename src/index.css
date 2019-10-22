@@ -11,6 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.ant-tabs-tab-prev.ant-tabs-tab-arrow-show, .ant-tabs-tab-next.ant-tabs-tab-arrow-show {
+  display: none;
+}
+.ant-tabs-nav-container-scrolling {
+   padding-right: 0;
+   padding-left: 0;
+}
 
 .App .ant-table table {
   text-align: center;
@@ -22,4 +29,51 @@ code {
 
 .nav{
   display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  width: 95%;
+  margin: 0 auto;
+
+}
+.nav .ant-tabs-nav{
+  width: 100%;
+
+}
+.nav .ant-btn-icon-only{
+  margin-left: 5px;
+}
+.tabs .ant-tabs-nav .ant-tabs-nav-animated{
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+.tabs .ant-tabs-nav{
+  width: 100%;
+}
+.tabs .ant-tabs-nav .ant-tabs-tab {
+  text-align: center;
+}
+.App h1{
+  text-align: center;
+}
+.ant-tabs-tab{
+  width: 45%;
+}
+
+.App .table td{
+
+}
+
+.weather-day {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weather-day td{
+  align-items: center;
+  margin-left: 50px;
+  margin-right: 50px;
+  text-align: center;
 }
