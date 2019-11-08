@@ -1,8 +1,7 @@
 import * as React from "react";
 import { Spin, Table } from "antd";
-import "antd/dist/antd.css";
-import * as func from "../global/globalFunc";
-import './forecast.css'
+import * as func from "../../global/globalFunc";
+import './index.css'
 
 class Forecast extends React.Component<any, any> {
   constructor(props: object) {
@@ -12,12 +11,14 @@ class Forecast extends React.Component<any, any> {
       data: undefined,
       search: this.props.search.search,
       isLoading: false,
-      rowKey: 1
+      rowKey: 1,
+      type: 'forecast'
     };
   }
 
   public async componentDidMount() {
-    const data = await func.loadDataForecast(this.state);
+    const {type} = this.state;
+    const data = await func.loadData(this.state, type);
     this.setState({
       data,
       isLoading: true
@@ -29,19 +30,22 @@ class Forecast extends React.Component<any, any> {
     prevState: Readonly<object>,
     snapshot?: object
   ) {
-    if (this.state.search !== this.props.search.search) {
-      const data = await func.loadDataForecast(this.props.search);
+    const {position, search, type} = this.state;
+    const searchProps = this.props.search;
+
+    if (search !== searchProps.search) {
+      const data = await func.loadData(searchProps, type);
       this.setState({
         data,
         isLoading: true,
-        search: this.props.search.search
+        search: searchProps.search
       });
-    } else if (this.state.position !== this.props.search.position) {
-      const data = await func.loadDataForecast(this.props.search);
+    } else if (position !== searchProps.position) {
+      const data = await func.loadData(searchProps, type);
       this.setState({
         data,
         isLoading: true,
-        position: this.props.search.position
+        position: searchProps.position
       });
     }
   }

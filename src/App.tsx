@@ -1,14 +1,14 @@
 import React from "react";
-import Weather from "./components/page/Weather";
+import Weather from "./components/page/Weather/Weather";
 import { Input, Button, Tabs, Modal } from "antd";
 import "antd/dist/antd.css";
-import Forecast from "./components/page/Forecast";
+import Forecast from "./components/page/Forecast/Forecast";
 
 class App extends React.Component<any, any> {
   constructor(props: object) {
     super(props);
     this.state = {
-      search: "Lviv",
+      search: 'Lviv',
       position: undefined,
       isLoading: false,
       visible: false
@@ -35,7 +35,6 @@ class App extends React.Component<any, any> {
   public getLocation = async () => {
     if (navigator.geolocation) {
       await navigator.geolocation.getCurrentPosition(async (position: any) => {
-          console.log(typeof position);
           let state = await position.coords;
         this.setState({
           position: state
@@ -49,6 +48,7 @@ class App extends React.Component<any, any> {
   public render() {
     const { Search } = Input;
     const { TabPane } = Tabs;
+    const { visible } = this.state;
 
     return (
       <div className="App">
@@ -76,7 +76,7 @@ class App extends React.Component<any, any> {
         </Tabs>
         <Modal
           title="Your coordinates"
-          visible={this.state.visible}
+          visible={visible}
           onOk={this.handleOk}
           onCancel={this.handleCancel}
         >

@@ -1,7 +1,6 @@
 import React from "react";
 import { Spin } from "antd";
-import "antd/dist/antd.css";
-import * as func from "../global/globalFunc";
+import * as func from "../../global/globalFunc";
 
 class App extends React.Component<any, any> {
   constructor(props: object) {
@@ -10,13 +9,14 @@ class App extends React.Component<any, any> {
       data: undefined,
       search: this.props.search.search,
       isLoading: false,
-      position: undefined
+      position: undefined,
+      type: 'weather'
     };
   }
 
   public async componentDidMount() {
     const state = this.state;
-    const data = await func.loadData(state);
+    const data = await func.loadData(state, 'weather');
     this.setState({
       data,
       isLoading: true
@@ -28,19 +28,22 @@ class App extends React.Component<any, any> {
     prevState: Readonly<object>,
     snapshot?: object
   ) {
-    if (this.state.search !== this.props.search.search) {
-      const data = await func.loadData(this.props.search);
+    const {position, search, type} = this.state;
+    const searchProps = this.props.search;
+
+    if (search !== searchProps.search) {
+      const data = await func.loadData(searchProps, type);
       this.setState({
         data,
         isLoading: true,
-        search: this.props.search.search
+        search: searchProps.search
       });
-    } else if (this.state.position !== this.props.search.position) {
-      const data = await func.loadData(this.props.search);
+    } else if (position !== searchProps.position) {
+      const data = await func.loadData(searchProps, type);
       this.setState({
         data,
         isLoading: true,
-        position: this.props.search.position
+        position: searchProps.position
       });
     }
   }

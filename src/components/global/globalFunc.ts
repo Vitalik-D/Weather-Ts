@@ -1,11 +1,7 @@
 import * as API from "../api/API";
 
-export const loadData = async (state: object) => {
-  return await API.currentWeather(state);
-};
-
-export const loadDataForecast = async (state: object) => {
-  return await API.currentForecast(state);
+export const loadData = async (state: object, type: string) => {
+  return await API.currentWeather(state, type);
 };
 
 export const kInC = (temp: number) => {
